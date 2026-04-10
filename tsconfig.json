@@ -1,0 +1,125 @@
+{
+  // Files to include in TypeScript compilation
+  "include": ["src/**/*"],
+
+  // Exclude build output and dependencies from type checking
+  "exclude": ["dist", "node_modules"],
+
+  "compilerOptions": {
+    /* Path Resolution */
+    // Base directory for resolving non-relative module names
+    "baseUrl": ".",
+
+    // Path aliases for cleaner imports - keep as configured
+        "paths": {
+          "@webgl": ["./src/webgl/index.ts"],
+          "@world": ["./src/webgl/world/index.ts"]
+        },
+
+    /* Language and Environment */
+    // ECMAScript target version for emitted JavaScript
+    // Options: "ES2020" | "ES2021" | "ES2022" | "ES2023" | "ESNext"
+    "target": "ES2023",
+
+    // Emit ECMAScript-standard-compliant class fields (required for decorators)
+    "useDefineForClassFields": true,
+
+    // TypeScript library files to include in compilation
+    // Options: ["ES2023"] | ["ES2023", "DOM"] | ["ESNext"]
+    "lib": ["ES2023", "DOM", "DOM.Iterable"],
+
+    // Module system for generated JavaScript
+    // Options: "CommonJS" | "ES2020" | "ES2022" | "ESNext" | "Node16" | "NodeNext"
+    "module": "ESNext",
+
+    /* Bundler Mode - Optimized for Vite/Astro */
+    // Module resolution strategy (bundler mode is optimized for Vite)
+    // Options: "node" | "node16" | "nodenext" | "bundler" | "classic"
+    "moduleResolution": "bundler",
+
+    // Allow importing .ts/.tsx files without extensions
+    "allowImportingTsExtensions": true,
+
+    // Treat each file as a module even without import/export
+    // Options: "auto" | "legacy" | "force"
+    "moduleDetection": "force",
+
+    // Don't emit compiled JavaScript files (Astro handles this via Vite)
+    "noEmit": true,
+
+    /* Strict Type Checking */
+    // Enable all strict type-checking options
+    "strict": true,
+
+    // Report errors on unused local variables
+    "noUnusedLocals": true,
+
+    // Report errors on unused function parameters
+    "noUnusedParameters": true,
+
+    // Disallow non-type-safe syntax (isolatedModules equivalent)
+    // Ensure import/export statements are not transformed (preserves ESM)
+    "verbatimModuleSyntax": true,
+
+    // Report errors for fallthrough cases in switch statements
+    "noFallthroughCasesInSwitch": true,
+
+    // Report errors for imports with side effects that lack type annotations
+    "noUncheckedSideEffectImports": true,
+
+    // Disallow unreachable code
+    "allowUnreachableCode": false,
+
+    // Disallow unused labels
+    "allowUnusedLabels": false,
+
+    // Require exact types for optional properties (no undefined allowed implicitly)
+    "exactOptionalPropertyTypes": true,
+
+    // Require explicit types, disallow 'any' inference
+    "noImplicitAny": true,
+
+    // Ensure 'override' modifier is used when overriding members
+    "noImplicitOverride": true,
+
+    // Require all code paths in functions to return a value
+    "noImplicitReturns": true,
+
+    // Raise error on 'this' expressions with an implied 'any' type
+    "noImplicitThis": true,
+
+    // Require indexed access to explicitly check for undefined
+    "noPropertyAccessFromIndexSignature": true,
+
+    // Add undefined to index signatures automatically
+    "noUncheckedIndexedAccess": true,
+
+    // Ensure strict null checks are enforced
+    "strictNullChecks": true,
+
+    // Ensure class properties are initialized in constructor
+    "strictPropertyInitialization": true,
+
+    // Default catch clause variables to 'unknown' instead of 'any'
+    "useUnknownInCatchVariables": true,
+
+    // Skip type checking of declaration files (.d.ts) for faster builds
+    "skipLibCheck": true
+
+    /* Optional: Advanced Configuration */
+    // "resolveJsonModule": true,
+    // Allow importing .json files as modules
+
+    // "allowSyntheticDefaultImports": true,
+    // Allow default imports from modules with no default export (only affects types)
+
+    // "esModuleInterop": true,
+    // Emit additional JS for easier interop with CommonJS modules
+
+    // "forceConsistentCasingInFileNames": true,
+    // Ensure file name casing is consistent across imports
+
+    // "isolatedModules": true,
+    // Required if using esbuild/swc; ensures each file can be compiled independently
+  }
+}
